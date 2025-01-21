@@ -373,7 +373,7 @@ export default function Contact() {
           {/* Submit Button */}
           <div className="text-center">
             <motion.button
-              whileHover={{ scale: 1.1, backgroundColor: "#6b21a8" }}
+              whileHover={{ scale: 1.1, backgroundColor: "#003dbc" }}
               whileTap={{ scale: 0.9 }}
               className="px-8 py-3 bg-[#0077B6] text-lg font-bold text-white rounded-md shadow-lg"
               type="submit" // Specify button type as submit
@@ -403,7 +403,7 @@ export default function Contact() {
             href="https://github.com/RimshaNawaz"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
+            className="transition-all transform hover:scale-110 rounded-full hover:bg-[rgb(0,61,182)] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
           >
             <i className="fab fa-github"></i>
           </a>
@@ -413,15 +413,15 @@ export default function Contact() {
             href="https://www.linkedin.com/in/rimsha-nawaz-623048278/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
+            className="transition-all transform hover:scale-110 rounded-full hover:bg-[rgb(0,61,182)] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
           >
             <i className="fab fa-linkedin"></i>
           </a>
 
           {/* Email */}
           <a
-            href="mailto:your-email@example.com"
-            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
+            href="mailto:rimshanawaz360@gmail.com"
+            className="transition-all transform hover:scale-110 rounded-full hover:bg-[rgb(0,61,182)] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
           >
             <i className="fas fa-envelope"></i>
           </a>

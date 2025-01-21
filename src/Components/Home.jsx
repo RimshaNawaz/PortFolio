@@ -151,7 +151,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { HiDownload } from "react-icons/hi"; // Import the download icon
-
 export default function Home() {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between min-h-screen bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white px-6 sm:px-10">
@@ -213,23 +212,23 @@ export default function Home() {
         {/* Buttons */}
         <div className="mt-4 flex flex-wrap gap-4">
           <motion.button
-            whileHover={{ scale: 1.1, backgroundColor: "#00A8CC" }}
+            whileHover={{ scale: 1.1, backgroundColor: "#003dbc" }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-3 bg-[#00B4D8] text-lg font-bold rounded-md shadow-lg"
+            className="px-6 py-3 bg-[#0077B6]  text-lg font-bold rounded-md shadow-lg"
           >
             React.js
           </motion.button>
           <motion.button
-            whileHover={{ scale: 1.1, backgroundColor: "#00A8CC" }}
+            whileHover={{ scale: 1.1, backgroundColor: "#003dbc" }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-3 bg-[#00B4D8] text-lg font-bold rounded-md shadow-lg"
+            className="hover:bg-[rgb(0,61,182)] px-6 py-3 bg-[#0077B6] text-lg font-bold rounded-md shadow-lg"
           >
             Next.js
           </motion.button>
           <motion.button
-            whileHover={{ scale: 1.1, backgroundColor: "#00A8CC" }}
+            whileHover={{ scale: 1.1, backgroundColor: "#003dbc" }}
             whileTap={{ scale: 0.9 }}
-            className="px-6 py-3 bg-[#00B4D8] text-lg font-bold rounded-md shadow-lg"
+            className="px-6 py-3 bg-[#0077B6] text-lg font-bold rounded-md shadow-lg hover:bg-[rgb(0,61,182)] "
           >
             MongoDB
           </motion.button>
@@ -243,7 +242,7 @@ export default function Home() {
               href="https://github.com/RimshaNawaz"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-4xl p-2 rounded-full hover:bg-[#00A8CC] transition-all"
+              className="text-white bg-[#0077B6] text-4xl p-2 rounded-full hover:bg-[rgb(0,61,182)] transition-all"
             >
               <FaGithub />
             </a>
@@ -251,7 +250,7 @@ export default function Home() {
               href="https://www.linkedin.com/in/rimsha-nawaz-623048278/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-4xl p-2 rounded-full hover:bg-[#00A8CC] transition-all"
+              className="text-white bg-[#0077B6] text-4xl p-2 rounded-full hover:bg-[rgb(0,61,182)] transition-all"
             >
               <FaLinkedin />
             </a>
@@ -260,7 +259,7 @@ export default function Home() {
           {/* CV Download Button */}
           <motion.a
             href="/My Resume.pdf"
-            className="mt-4 sm:mt-0 inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-[#00B4D8] text-lg sm:text-xl font-bold text-white rounded-full shadow-lg hover:bg-[#00A8CC] transition-all"
+            className="mt-4 sm:mt-0 inline-flex items-center px-6 py-3 sm:px-8 sm:py-4 bg-[#0077B6] text-lg sm:text-xl font-bold text-white rounded-full shadow-lg hover:bg-[rgb(0,61,182)] transition-all"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >

@@ -218,7 +218,9 @@ export default function About() {
   }, [textIndex]);
 
   return (
-    <section className="py-16 bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white px-6 sm:px-10">
+    // <section className="py-16 bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8]  text-white px-6 sm:px-10">
+    <section className="py-16 bg-gradient-to-br from-[#005f8a] via-[#00B4D8] to-[#0092c1] text-white px-6 sm:px-10">
+
       {/* Header */}
       <div className="max-w-4xl mx-auto text-center mb-12">
         <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
@@ -241,7 +243,7 @@ export default function About() {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Card 1 */}
         <motion.div
-          className="p-6 bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white rounded-lg shadow-lg"
+          className="p-6 bg-white text-gray-800 rounded-lg shadow-lg"
           animate={{
             y: [0, -10, 0],
           }}
@@ -263,7 +265,7 @@ export default function About() {
 
         {/* Card 2 */}
         <motion.div
-          className="p-6 bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white rounded-lg shadow-lg"
+          className="p-6 bg-white text-gray-800 rounded-lg shadow-lg"
           animate={{
             y: [0, -10, 0],
           }}
@@ -287,7 +289,7 @@ export default function About() {
 
         {/* Card 3 */}
         <motion.div
-          className="p-6 bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white rounded-lg shadow-lg"
+          className="p-6 bg-white text-gray-800 rounded-lg shadow-lg"
           animate={{
             y: [0, -10, 0],
           }}

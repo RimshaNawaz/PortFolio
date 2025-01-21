@@ -36,9 +36,10 @@ export default function Navbar() {
             <NavLink
               key={path}
               to={path}
+              
               className={({ isActive }) =>
-                `text-white hover:text-[#0077B6] transition-all duration-300 ${
-                  isActive ? "text-[white] border-b-2 border-[#0077B6] text-xl" : ""
+                `text-white hover:text-[rgb(0,61,182)] transition-all duration-300 ${
+                  isActive ? "text-[rgb(0,61,182)] border-b-2 border-[rgb(0,61,182)] text-xl" : ""
                 }`
               }
               exact
@@ -51,14 +52,14 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-4 bg-[#0077B6] rounded-md shadow-lg text-center p-4 space-y-4">
+        <div className="lg:hidden mt-4 bg-[#6cb6df] rounded-md shadow-lg text-center p-4 space-y-4">
           {["/home", "/projects", "/about", "/contact"].map((path) => (
             <NavLink
               key={path}
               to={path}
               className={({ isActive }) =>
-                `block text-white hover:text-[#0077B6] transition-all duration-300 ${
-                  isActive ? "text-white border-b-2 border-[#0077B6]" : ""
+                `block text-white hover:text-[rgb(0,61,182)] transition-all duration-300 ${
+                  isActive ? "text-[rgb(0,61,182)] border-b-2 border-[rgb(0,61,182)] text-xl" : ""
                 }`
               }
               onClick={toggleMenu}

@@ -191,7 +191,7 @@ export default function Projects() {
               href={project.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-[#0077B6] text-white font-medium rounded-md hover:bg-[#2f539c]"
+              className="inline-block px-4 py-2 bg-[#0077B6] text-white font-medium rounded-md hover:bg-[#335aa9]"
             >
               View Video on LinkedIn
             </a>
