@@ -51,7 +51,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-4 bg-[#6b21a8] rounded-md shadow-lg text-center p-4 space-y-4">
+        <div className="lg:hidden mt-4 bg-[#0077B6] rounded-md shadow-lg text-center p-4 space-y-4">
           {["/home", "/projects", "/about", "/contact"].map((path) => (
             <NavLink
               key={path}
