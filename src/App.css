@@ -14,9 +14,9 @@ h1 {
   text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3);
 }
 
-.bg-gradient-to-r {
+/* .bg-gradient-to-r {
   background: linear-gradient(120deg, #6b46c1, #3b82f6);
-}
+} */
 
 @keyframes fadeIn {
   0% {
@@ -37,8 +37,8 @@ h1 {
   animation: bounce 2s infinite;
 }
 .active-link {
-  color: #ff00ff !important;
-  border-bottom: 2px solid #ff00ff;
+  color: blue !important;
+  border-bottom: 2px solid #0077B6;
   font-weight: bold;
   transition: color 0.3s, border-bottom 0.3s;
 }

@@ -1,6 +1,38 @@
+// import React from "react";
 // import { motion } from "framer-motion";
+// import { useState, useEffect } from "react";
 
 // export default function Contact() {
+//   const [showText, setShowText] = useState(false);
+//   useEffect(() => {
+//     setShowText(true);
+//   }, []);
+
+//   const text = "Contact Me"; // Text you want to display
+//   const [result, setResult] = React.useState("");
+
+//   const onSubmit = async (event) => {
+//     event.preventDefault();
+//     setResult("Sending....");
+//     const formData = new FormData(event.target);
+
+//     formData.append("access_key", "3bcecb24-d0ec-4479-af20-81a11e9fec0b");
+
+//     const response = await fetch("https://api.web3forms.com/submit", {
+//       method: "POST",
+//       body: formData
+//     });
+
+//     const data = await response.json();
+
+//     if (data.success) {
+//       setResult("Form Submitted Successfully");
+//       event.target.reset();
+//     } else {
+//       console.log("Error", data);
+//       setResult(data.message);
+//     }
+//   };
 //   return (
 //     <section className="py-16 bg-gradient-to-br from-[#a855f7] via-[#6b21a8] to-[#9333ea] text-white px-6 sm:px-10">
 //       <div className="max-w-6xl mx-auto text-center mb-12">
@@ -10,7 +42,29 @@
 //           transition={{ duration: 1 }}
 //           className="text-4xl sm:text-5xl font-bold mb-6"
 //         >
-//           Contact Me
+//           {/* Split text into individual words */}
+//           <span className="flex justify-center">
+//             {text.split(" ").map((word, wordIndex) => (
+//               <span key={wordIndex} className="inline-block mr-2">
+//                 {word.split("").map((char, index) => (
+//                   <motion.span
+//                     key={index}
+//                     initial={{ opacity: 0 }}
+//                     animate={{
+//                       opacity: showText ? 1 : 0,
+//                     }}
+//                     transition={{
+//                       delay: (wordIndex * text.split(" ").length + index) * 0.1, // Each word's characters will appear sequentially
+//                       duration: 0.5,
+//                     }}
+//                     className="inline-block"
+//                   >
+//                     {char}
+//                   </motion.span>
+//                 ))}
+//               </span>
+//             ))}
+//           </span>
 //         </motion.h2>
 //         <motion.p
 //           initial={{ opacity: 0 }}
@@ -29,11 +83,13 @@
 //         transition={{ duration: 1, ease: "easeOut" }}
 //         className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg"
 //       >
+        
 //         <motion.form
 //           initial={{ opacity: 0 }}
 //           animate={{ opacity: 1 }}
 //           transition={{ duration: 1, delay: 1 }}
 //           className="space-y-6"
+//           onSubmit={onSubmit}
 //         >
 //           {/* Name Field */}
 //           <div>
@@ -45,9 +101,11 @@
 //             </label>
 //             <input
 //               id="name"
+//               name="name" // Add name attribute for form data
 //               type="text"
 //               placeholder="Enter your name"
-//               className="w-full mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               required // Make field required
 //             />
 //           </div>
 
@@ -61,9 +119,11 @@
 //             </label>
 //             <input
 //               id="email"
+//               name="email" // Add name attribute for form data
 //               type="email"
 //               placeholder="Enter your email"
-//               className="w-full mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               required // Make field required
 //             />
 //           </div>
 
@@ -77,9 +137,11 @@
 //             </label>
 //             <textarea
 //               id="message"
+//               name="message" // Add name attribute for form data
 //               rows="5"
 //               placeholder="Write your message here"
-//               className="w-full mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               required // Make field required
 //             />
 //           </div>
 
@@ -89,11 +151,14 @@
 //               whileHover={{ scale: 1.1, backgroundColor: "#6b21a8" }}
 //               whileTap={{ scale: 0.9 }}
 //               className="px-8 py-3 bg-[#9333ea] text-lg font-bold text-white rounded-md shadow-lg"
+//               type="submit" // Specify button type as submit
 //             >
 //               Send Message
 //             </motion.button>
 //           </div>
 //         </motion.form>
+
+//         <span>{result}</span>
 //       </motion.div>
 
 //       {/* Contact Information */}
@@ -110,31 +175,29 @@
 //         <div className="mt-6 flex justify-center space-x-6 animate-moving">
 //           {/* GitHub */}
 //           <a
-//             href="https://github.com/yourgithub"
+//             href="https://github.com/RimshaNawaz"
 //             target="_blank"
 //             rel="noopener noreferrer"
-//             className="transition-all transform hover:scale-110 hover:bg-[#6b21a8] hover:text-white p-4 bg-white rounded-full  text-black  text-3xl flex items-center justify-center"
-//                >
+//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+//           >
 //             <i className="fab fa-github"></i>
 //           </a>
 
 //           {/* LinkedIn */}
 //           <a
-//             href="https://linkedin.com/in/yourlinkedin"
+//             href="https://www.linkedin.com/in/rimsha-nawaz-623048278/"
 //             target="_blank"
 //             rel="noopener noreferrer"
-//             className="transition-all transform hover:scale-110 hover:bg-[#6b21a8] hover:text-white p-4 bg-white rounded-full  text-black  text-3xl flex items-center justify-center"
-//             >
+//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+//           >
 //             <i className="fab fa-linkedin"></i>
 //           </a>
 
 //           {/* Email */}
 //           <a
 //             href="mailto:your-email@example.com"
-//           // className="transition-all transform hover:scale-110 hover:bg-[#6b21a8] p-4 rounded-full bg-[#9333ea] text-white text-3xl flex items-center justify-center"
-
-//             className="transition-all transform hover:scale-110 hover:bg-[#6b21a8] hover:text-white p-4 bg-white rounded-full  text-black  text-3xl flex items-center justify-center"
-//            >
+//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+//           >
 //             <i className="fas fa-envelope"></i>
 //           </a>
 //         </div>
@@ -160,22 +223,43 @@
 //   );
 // }
 
-
+import React from "react";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
 export default function Contact() {
-  // Set state for the text animation
   const [showText, setShowText] = useState(false);
-
   useEffect(() => {
     setShowText(true);
   }, []);
 
   const text = "Contact Me"; // Text you want to display
+  const [result, setResult] = React.useState("");
 
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    setResult("Sending....");
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "3bcecb24-d0ec-4479-af20-81a11e9fec0b");
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      setResult("Form Submitted Successfully");
+      event.target.reset();
+    } else {
+      console.log("Error", data);
+      setResult(data.message);
+    }
+  };
   return (
-    <section className="py-16 bg-gradient-to-br from-[#a855f7] via-[#6b21a8] to-[#9333ea] text-white px-6 sm:px-10">
+    <section className="py-16 bg-gradient-to-br  from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white px-6 sm:px-10">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -224,11 +308,13 @@ export default function Contact() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg"
       >
+        
         <motion.form
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
           className="space-y-6"
+          onSubmit={onSubmit}
         >
           {/* Name Field */}
           <div>
@@ -240,9 +326,11 @@ export default function Contact() {
             </label>
             <input
               id="name"
+              name="name" // Add name attribute for form data
               type="text"
               placeholder="Enter your name"
-              className="w-full mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+              className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#0077B6]"
+              required // Make field required
             />
           </div>
 
@@ -256,9 +344,11 @@ export default function Contact() {
             </label>
             <input
               id="email"
+              name="email" // Add name attribute for form data
               type="email"
               placeholder="Enter your email"
-              className="w-full mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+              className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#0077B6]"
+              required // Make field required
             />
           </div>
 
@@ -272,9 +362,11 @@ export default function Contact() {
             </label>
             <textarea
               id="message"
+              name="message" // Add name attribute for form data
               rows="5"
               placeholder="Write your message here"
-              className="w-full mt-2 p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+              className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#0077B6]"
+              required // Make field required
             />
           </div>
 
@@ -283,12 +375,15 @@ export default function Contact() {
             <motion.button
               whileHover={{ scale: 1.1, backgroundColor: "#6b21a8" }}
               whileTap={{ scale: 0.9 }}
-              className="px-8 py-3 bg-[#9333ea] text-lg font-bold text-white rounded-md shadow-lg"
+              className="px-8 py-3 bg-[#0077B6] text-lg font-bold text-white rounded-md shadow-lg"
+              type="submit" // Specify button type as submit
             >
               Send Message
             </motion.button>
           </div>
         </motion.form>
+
+        <span>{result}</span>
       </motion.div>
 
       {/* Contact Information */}
@@ -308,7 +403,7 @@ export default function Contact() {
             href="https://github.com/RimshaNawaz"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
           >
             <i className="fab fa-github"></i>
           </a>
@@ -318,7 +413,7 @@ export default function Contact() {
             href="https://www.linkedin.com/in/rimsha-nawaz-623048278/"
             target="_blank"
             rel="noopener noreferrer"
-            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
           >
             <i className="fab fa-linkedin"></i>
           </a>
@@ -326,7 +421,7 @@ export default function Contact() {
           {/* Email */}
           <a
             href="mailto:your-email@example.com"
-            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+            className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
           >
             <i className="fas fa-envelope"></i>
           </a>
@@ -352,3 +447,4 @@ export default function Contact() {
     </section>
   );
 }
+

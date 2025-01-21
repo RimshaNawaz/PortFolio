@@ -1,3 +1,5 @@
+
+
 // import { motion } from "framer-motion";
 
 // export default function Projects() {
@@ -8,41 +10,41 @@
 //       description:
 //         "A responsive frontend clone of Spotify with a sleek UI and media playback functionality.",
 //       techStack: "HTML, CSS, JavaScript",
-//       github: "https://github.com/RimshaNawaz",
+//       linkedin: "https://www.linkedin.com/in/rimsha-nawaz-623048278/recent-activity/videos/",
 //     },
 //     {
-//       title: "Online Meal and Make Your Home",
+//       title: "Online Meal",
 //       description:
-//         "An innovative platform for meal planning and home organization.",
-//       techStack: "React.js, Bootstrap",
-//       github: "https://github.com/RimshaNawaz",
+//         "An innovative platform for meal planning and enjoying life with fun.",
+//       techStack: "HTML, CSS, JavaScript",
+//       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7069947618436530177/?originTrackingId=VUKFhViGRGiClR3qWX6XIw%3D%3D",
 //     },
 //     {
 //       title: "Welcome to My GYM",
 //       description:
 //         "A frontend gym management system with a focus on user experience and design.",
 //       techStack: "HTML, CSS, JavaScript",
-//       github: "https://github.com/RimshaNawaz",
+//       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7077235339374804994/?originTrackingId=zEfoRuhKS7%2BngkDeR%2F48HA%3D%3D",
 //     },
 //     {
 //       title: "To-Do List",
 //       description: "A classic task management app with a clean, minimalistic UI.",
 //       techStack: "React.js",
-//       github: "https://github.com/RimshaNawaz",
+//       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7096945310408581120/?originTrackingId=nx3DLwzaSfiQGRknEtXusA%3D%3D",
 //     },
 //     {
 //       title: "Digital Clock",
 //       description:
 //         "A simple digital clock showcasing real-time updates with JavaScript.",
 //       techStack: "HTML, CSS, JavaScript",
-//       github: "https://github.com/RimshaNawaz",
+//       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7085996769938948096/?originTrackingId=1YswgRwoSRy6BhZ4wSOK%2Fw%3D%3D",
 //     },
 //     {
-//       title: "Alarm Clock and Password Generator",
+//       title: "Password Generator",
 //       description:
 //         "Combines alarm clock functionality with a secure password generator.",
 //       techStack: "HTML, CSS, JavaScript",
-//       github: "https://github.com/RimshaNawaz",
+//       linkedin: "https://www.linkedin.com/feed/update/urn:li:activity:7085997489639559168/?updateEntityUrn=urn%3Ali%3Afs_updateV2%3A%28urn%3Ali%3Aactivity%3A7085997489639559168%2CFEED_DETAIL%2CEMPTY%2CDEFAULT%2Cfalse%29&originTrackingId=WC79JPc1TxOTx9oGgWlwhA%3D%3D",
 //     },
 //   ];
 
@@ -58,8 +60,8 @@
 //           My Projects
 //         </motion.h2>
 //         <p className="text-lg sm:text-xl font-medium">
-//           Explore some of my featured projects that demonstrate my skills in web
-//           development.
+//           Explore some of my featured projects through LinkedIn videos that
+//           demonstrate my skills in web development.
 //         </p>
 //       </div>
 
@@ -84,12 +86,12 @@
 //               Tech Stack: {project.techStack}
 //             </p>
 //             <a
-//               href={project.github}
+//               href={project.linkedin}
 //               target="_blank"
 //               rel="noopener noreferrer"
 //               className="inline-block px-4 py-2 bg-[#9333ea] text-white font-medium rounded-md hover:bg-[#6b21a8]"
 //             >
-//               GitHub
+//               View Video on LinkedIn
 //             </a>
 //           </motion.div>
 //         ))}
@@ -97,6 +99,7 @@
 //     </section>
 //   );
 // }
+
 
 
 import { motion } from "framer-motion";
@@ -148,7 +151,7 @@ export default function Projects() {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-br from-[#a855f7] via-[#6b21a8] to-[#9333ea] text-white px-6 sm:px-10">
+    <section className="py-16 bg-gradient-to-br from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white px-6 sm:px-10">
       <div className="max-w-6xl mx-auto text-center mb-12">
         <motion.h2
           initial={{ opacity: 0 }}
@@ -188,7 +191,7 @@ export default function Projects() {
               href={project.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-4 py-2 bg-[#9333ea] text-white font-medium rounded-md hover:bg-[#6b21a8]"
+              className="inline-block px-4 py-2 bg-[#0077B6] text-white font-medium rounded-md hover:bg-[#2f539c]"
             >
               View Video on LinkedIn
             </a>
