@@ -34,7 +34,7 @@
 //     }
 //   };
 //   return (
-//     <section className="py-16 bg-gradient-to-br from-[#a855f7] via-[#6b21a8] to-[#9333ea] text-white px-6 sm:px-10">
+//     <section className="py-16 bg-gradient-to-br  from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white px-6 sm:px-10">
 //       <div className="max-w-6xl mx-auto text-center mb-12">
 //         <motion.h2
 //           initial={{ opacity: 0 }}
@@ -104,7 +104,7 @@
 //               name="name" // Add name attribute for form data
 //               type="text"
 //               placeholder="Enter your name"
-//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#0077B6]"
 //               required // Make field required
 //             />
 //           </div>
@@ -122,7 +122,7 @@
 //               name="email" // Add name attribute for form data
 //               type="email"
 //               placeholder="Enter your email"
-//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#0077B6]"
 //               required // Make field required
 //             />
 //           </div>
@@ -140,7 +140,7 @@
 //               name="message" // Add name attribute for form data
 //               rows="5"
 //               placeholder="Write your message here"
-//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#9333ea]"
+//               className="w-full mt-2 p-3 rounded-md border border-gray-300 text-black focus:outline-none focus:ring-2 focus:ring-[#0077B6]"
 //               required // Make field required
 //             />
 //           </div>
@@ -148,9 +148,9 @@
 //           {/* Submit Button */}
 //           <div className="text-center">
 //             <motion.button
-//               whileHover={{ scale: 1.1, backgroundColor: "#6b21a8" }}
+//               whileHover={{ scale: 1.1, backgroundColor: "#003dbc" }}
 //               whileTap={{ scale: 0.9 }}
-//               className="px-8 py-3 bg-[#9333ea] text-lg font-bold text-white rounded-md shadow-lg"
+//               className="px-8 py-3 bg-[#0077B6] text-lg font-bold text-white rounded-md shadow-lg"
 //               type="submit" // Specify button type as submit
 //             >
 //               Send Message
@@ -178,7 +178,7 @@
 //             href="https://github.com/RimshaNawaz"
 //             target="_blank"
 //             rel="noopener noreferrer"
-//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[rgb(0,61,182)] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
 //           >
 //             <i className="fab fa-github"></i>
 //           </a>
@@ -188,15 +188,15 @@
 //             href="https://www.linkedin.com/in/rimsha-nawaz-623048278/"
 //             target="_blank"
 //             rel="noopener noreferrer"
-//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[rgb(0,61,182)] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
 //           >
 //             <i className="fab fa-linkedin"></i>
 //           </a>
 
 //           {/* Email */}
 //           <a
-//             href="mailto:your-email@example.com"
-//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[#6b21a8] p-4 bg-[#9333ea] text-white text-3xl flex items-center justify-center"
+//             href="mailto:rimshanawaz360@gmail.com"
+//             className="transition-all transform hover:scale-110 rounded-full hover:bg-[rgb(0,61,182)] p-4 bg-[#0077B6] text-white text-3xl flex items-center justify-center"
 //           >
 //             <i className="fas fa-envelope"></i>
 //           </a>
@@ -229,12 +229,14 @@ import { useState, useEffect } from "react";
 
 export default function Contact() {
   const [showText, setShowText] = useState(false);
+  const [showSuccessPopup, setShowSuccessPopup] = useState(false); // State to control popup visibility
+  const [result, setResult] = useState("");
+
   useEffect(() => {
     setShowText(true);
   }, []);
 
   const text = "Contact Me"; // Text you want to display
-  const [result, setResult] = React.useState("");
 
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -245,7 +247,7 @@ export default function Contact() {
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formData
+      body: formData,
     });
 
     const data = await response.json();
@@ -253,11 +255,14 @@ export default function Contact() {
     if (data.success) {
       setResult("Form Submitted Successfully");
       event.target.reset();
+      setShowSuccessPopup(true); // Show success popup
+      setTimeout(() => setShowSuccessPopup(false), 5000); // Hide popup after 3 seconds
     } else {
       console.log("Error", data);
       setResult(data.message);
     }
   };
+
   return (
     <section className="py-16 bg-gradient-to-br  from-[#0077B6] via-[#00A8CC] to-[#00B4D8] text-white px-6 sm:px-10">
       <div className="max-w-6xl mx-auto text-center mb-12">
@@ -308,7 +313,6 @@ export default function Contact() {
         transition={{ duration: 1, ease: "easeOut" }}
         className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg"
       >
-        
         <motion.form
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -318,10 +322,7 @@ export default function Contact() {
         >
           {/* Name Field */}
           <div>
-            <label
-              htmlFor="name"
-              className="block text-lg font-medium text-gray-700"
-            >
+            <label htmlFor="name" className="block text-lg font-medium text-gray-700">
               Your Name
             </label>
             <input
@@ -336,10 +337,7 @@ export default function Contact() {
 
           {/* Email Field */}
           <div>
-            <label
-              htmlFor="email"
-              className="block text-lg font-medium text-gray-700"
-            >
+            <label htmlFor="email" className="block text-lg font-medium text-gray-700">
               Your Email
             </label>
             <input
@@ -354,10 +352,7 @@ export default function Contact() {
 
           {/* Message Field */}
           <div>
-            <label
-              htmlFor="message"
-              className="block text-lg font-medium text-gray-700"
-            >
+            <label htmlFor="message" className="block text-lg font-medium text-gray-700">
               Your Message
             </label>
             <textarea
@@ -385,6 +380,21 @@ export default function Contact() {
 
         <span>{result}</span>
       </motion.div>
+
+      {/* Success Popup */}
+      {showSuccessPopup && (
+        <div className="fixed top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-8 rounded-md text-center">
+            <p className="text-xl font-bold text-green-600">Form Submitted Successfully!</p>
+            <button
+              onClick={() => setShowSuccessPopup(false)}
+              className="mt-4 px-6 py-2 bg-[#0077B6] text-white rounded-md"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* Contact Information */}
       <div className="mt-12 text-center">
@@ -447,4 +457,3 @@ export default function Contact() {
     </section>
   );
 }
-

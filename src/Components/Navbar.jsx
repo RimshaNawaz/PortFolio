@@ -31,7 +31,7 @@ export default function Navbar() {
         </button>
 
         {/* Desktop Links */}
-        <div className="hidden lg:flex space-x-6">
+        <div className="hidden lg:flex space-x-6 font-bold">
           {["/home", "/projects", "/about", "/contact"].map((path) => (
             <NavLink
               key={path}
@@ -52,7 +52,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden mt-4 bg-[#6cb6df] rounded-md shadow-lg text-center p-4 space-y-4">
+        <div className="lg:hidden mt-4 bg-[#6cb6df] rounded-md shadow-lg text-center p-4 space-y-4 font-bold">
           {["/home", "/projects", "/about", "/contact"].map((path) => (
             <NavLink
               key={path}
